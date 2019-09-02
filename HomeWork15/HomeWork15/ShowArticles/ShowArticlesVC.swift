@@ -10,7 +10,9 @@ import UIKit
 
 class ShowArticlesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
+    @IBOutlet weak var activityIndic: UIActivityIndicatorView!
     @IBOutlet weak var tableArticles: UITableView!
+    
     private var articles: [Article] = [] {
         
         didSet {
@@ -20,7 +22,9 @@ class ShowArticlesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+            tableArticles.isHidden = true
+        
         tableArticles.register(UINib(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
 
         
@@ -29,6 +33,9 @@ class ShowArticlesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             switch result {
                 
             case .success(let articles):
+                
+                self.activityIndic.stopAnimating()
+                self.tableArticles.isHidden = false
                 self.articles = articles
                 
             case .failure(let error):

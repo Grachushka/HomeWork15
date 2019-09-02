@@ -151,6 +151,10 @@
                                     <outlet property="delegate" destination="3Mg-lJ-pmi" id="fKi-YJ-2K8"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cvq-Um-WCB">
+                                <rect key="frame" x="0.0" y="438" width="414" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -163,6 +167,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="b4U-MR-fSV"/>
                     <connections>
+                        <outlet property="activityIndic" destination="cvq-Um-WCB" id="GmQ-wO-FKi"/>
                         <outlet property="tableArticles" destination="04K-er-g6d" id="Oxw-Ha-jDg"/>
                     </connections>
                 </viewController>
